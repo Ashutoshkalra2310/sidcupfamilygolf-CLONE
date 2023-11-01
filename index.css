@@ -1,0 +1,471 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+html,body{
+    height:100%;
+    width:100%;
+}
+*::selection{
+    background-color: white;
+    color:#c4f345;
+}
+#nav{
+    height:120px;
+    width:100%;
+    display:flex;
+    align-items: center;
+    padding:0 150px;
+    justify-content: flex-start;
+    gap:50px;
+    /* background-color:red; */
+    position: fixed;
+    z-index:99;
+
+}
+#cursor{
+    height:20px;
+    width:20px;
+    background-color:#c4f345;
+    position:fixed;
+    border-radius: 50%;
+    z-index:99;
+}
+#cursorBlur{
+    height:400px;
+    width:400px;
+    background-color:#c5f34555;
+    position:fixed;
+    border-radius: 50%;
+    filter:blur(40px);
+    z-index: 9;
+}
+#nav img{
+    height:75px;
+    
+}
+#nav h4{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+video{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    z-index: -1;
+    position:fixed;
+}
+#main{
+    position:relative;
+    
+    background-color: rgba(0, 0, 0, 0.37);
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position :relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    /* position: absolute; */
+    z-index: 10;
+}
+#page1 h1{
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+}
+#page1 h1::before{
+    z-index:-1;
+    content: "EAT. DRINK. PLAY.";
+    position:absolute;
+    color:#000;
+    top:-6px;
+    left:-6px;
+    -webkit-text-stroke: 2px #c5f345;
+}
+#page1 h2{
+    margin-top:10px ;
+    margin-bottom: 20px;
+    font-size: 34px;
+    font-weight: 700;
+}
+#page1 p{
+   
+    font-weight: 300;
+    font-size: 22px;
+    width:40%;
+}
+#page2{
+    min-height:30vh;
+    width:100%;
+    z-index: 10;
+}
+#scroller{
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    position:relative;
+    z-index:10;
+
+}
+
+#scroller::-webkit-scrollbar{
+    display:none;
+}
+#scroller h4{
+    display: inline-block;
+    font-size: 140px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right:40px;
+    color:black;
+    -webkit-text-stroke: 2px #c4f345;
+    transition: all linear 0.5s;
+}
+#scroller h4:hover{
+    color:#c4f345;
+}
+.scroller-in{
+    white-space: nowrap;
+    animation-name: scroll;
+    display: inline-block;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+   
+}
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+#about-us{
+    height:40vh;
+    width:100%;
+    display:flex;
+    /* background-color:red; */
+    position: relative;
+    align-items: center;
+    padding:0 50px;
+    justify-content: space-around;
+}
+#about-us img{
+    height:220px;
+    width:220px;
+    object-fit:cover;
+    border-radius:8%;
+}
+#about-us-in{
+    text-align: center;
+    width:60%
+}
+#about-us-in h3{
+    font-size:70px ;
+    font-weight: 900;
+    margin-bottom:35px;
+}
+#about-us-in p{
+    font-size: 24px;
+    line-height:35px;
+    font-weight:300;
+
+}
+#card-container{
+    padding:0 60px;
+    height:80vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    /* background-color: red; */
+    position:relative;
+    z-index: 10;
+    gap:90px;
+}
+.cards{
+    
+    height:70%;
+    width:25%;
+    /* background-color: blue; */
+    /* border-ra */
+    border-radius: 20px;
+    /* object-fit: cover; */
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+    /* transition-duration: 0.6s; */
+
+}
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+    
+}
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+.overlay{
+    width: 100%;
+    height:100%;
+    padding-top:150px;
+    background-color: #c4f345;
+    padding:  150px 37px ;
+    opacity:0;
+    transition: all ease 0.6s; 
+    /* transition-duration: 0.6s;  */
+}
+.overlay h2{
+    text-transform: uppercase;
+    color:#000;
+    font-size: 35px;
+    white-space: nowrap;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+.overlay p{
+    color:black;
+    font-size: 20px;
+    font-weight: 300;
+
+}
+.cards:hover .overlay{
+    
+    opacity: 1;
+}
+.cards:hover{
+    transform: rotate3d(0,1,0,20deg);
+}
+#green-div{
+    height:30vh;
+    width:100%;
+    display: flex;
+    overflow: hidden;
+    background:linear-gradient(to left bottom,#57981e,#c4f345);
+    justify-content: space-between;
+    align-items: center;
+    
+}
+#green-div h2{
+    color:black;
+    width:45%;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 50px;
+    margin: 10px 30px;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    text-align: center;
+}
+#green-div img{
+    height:100%;
+    width: 12%;
+    object-fit: cover;
+    /* margin:0px; */
+}
+#page3{
+    height:80vh;
+    width:100%;
+    background-color:black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#page3>p{
+    width:70%;
+    text-transform:uppercase ;
+    font-size: 35px;
+    font-weight: 800;
+    line-height: 47px;
+    letter-spacing: 1px;
+    text-align:center;
+}
+#page3 img{
+    height: 10%;
+    position:absolute;
+}
+#page3 #coln1{
+    left:8%;
+    top:20%;
+}
+#page3 #coln2{
+    bottom:21%;
+    right:8%;
+}
+#page4{
+    width:100%;
+    height:40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:90px;
+    position: relative;
+}
+#page4 .elem{
+    
+    background-position: center;
+    overflow: hidden;
+    height:50% ;
+    width:25%;
+    text-transform: uppercase;
+    border-radius:25px;
+    position: relative;
+}
+.elem h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px;
+    letter-spacing: 2px;
+    font-weight: 900;
+    text-align: center;
+    background-color: #c4f345;
+    width:100%;
+    height:100%;
+    color:black;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.5s;
+}
+.elem img{
+    height:100%;
+    width:100%;
+    object-fit:cover;
+}
+.elem:hover h2{
+    color:white;
+    background-color: transparent;
+}
+#page4 h4{
+    text-transform: uppercase;
+    font-weight: 800;
+    position:absolute;
+    top:0%;
+    font-size: 100px;
+    color: #000;
+    -webkit-text-stroke: 2px white;
+    transition:all ease 0.5s;
+}
+#page5{
+    height:45vh;
+    width:100%;
+    background:linear-gradient(to left bottom,#3f9815,#c4f345);
+    display: flex;
+    z-index: 10;
+    justify-content: flex-start;
+    align-items:center;
+    overflow: hidden;
+    position: relative;
+    gap:150px;
+    padding:0 100px;
+}
+#page5 #img1{
+    height: 100%;
+    width:25%;
+    left:0;
+    position:absolute;
+}
+
+#page5 #img2{
+   
+    height:100px;
+   
+}
+#f1,#f2,#f3,#f4,#f5{
+    margin-left: 30px;
+    width:fit-content;
+    position: relative;
+}
+#f2 h4{
+    font-size: 32px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight:900;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+#f3 h4{
+    font-size: 32px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight:900;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+#f4 p,h5{
+    font-size: 18px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    color: #000;
+    font-weight:600;
+    line-height: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    
+}
+
+/* #imgscroll{
+    height: 30vh;
+    width: 100%;
+    z-index:10;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+#scroll2{
+    overflow-y: hidden;
+    overflow-x: auto;
+    position: relative;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    z-index:10;
+}
+#scroll2::-webkit-scrollbar{
+    display: none;
+}
+#scroll2 img{
+   
+    /* margin-right: 20px; */
+    /* transition: all linear 0.5s;
+}
+.scroll-on{
+    height:100%;
+    width:100%;
+    animation-name:scroll2;
+    display: flex;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    margin-right:15px;
+   
+}
+#imgscroll .imgcard{
+    position: absolute;
+    z-index:10;
+    height:100%;
+    width:100%;
+    background-color: red;
+}
+@keyframes scroll2 {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+} */ 
